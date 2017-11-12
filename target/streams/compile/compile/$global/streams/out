@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\USER\IdeaProjects\project_note_back-end\src\main\scala\testRoutes.scala:9:5: not found: value path[0m
+[0m[[0m[31merror[0m] [0m[0m    path ("test") {[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\USER\IdeaProjects\project_note_back-end\src\main\scala\testRoutes.scala:10:9: not found: value complete[0m
+[0m[[0m[31merror[0m] [0m[0m        complete(print("working"))[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
