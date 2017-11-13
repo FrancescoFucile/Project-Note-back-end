@@ -11,17 +11,6 @@ trait UploadRoutes extends Directives with  TagsJsonSupport{
         val teacher = tagsBlock.teacher
         val subject = tagsBlock.subject
         complete(s"prof $teacher on subject $subject")
-        fileUpload("note") {
-          case (fileInfo, fileStream) =>
-            val sink = FileIO.toPath(Paths.get("/tmp") resolve fileInfo.fileName)
-            val writeResult = fileStream.runWith(sink)
-            onSuccess(writeResult) { result =>
-              result.status match {
-                case Success(_) => complete(s"Successfully written ${result.count} bytes")
-                case Failure(e) => throw e
-              }
-            }
-        }
       }
     }
   }

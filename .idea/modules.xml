@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_note_back-end.iml" filepath="$PROJECT_DIR$/.idea/modules/project_note_back-end.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_note_back-end-build.iml" filepath="$PROJECT_DIR$/.idea/modules/project_note_back-end-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project-note-back-end.iml" filepath="$PROJECT_DIR$/.idea/modules/project-note-back-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project-note-back-end-build.iml" filepath="$PROJECT_DIR$/.idea/modules/project-note-back-end-build.iml" />
     </modules>
   </component>
 </project>
