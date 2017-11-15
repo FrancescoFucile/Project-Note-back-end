@@ -1,7 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\USER\IdeaProjects\project_note_back-end\src\main\scala\testRoutes.scala:9:5: not found: value path[0m
-[0m[[0m[31merror[0m] [0m[0m    path ("test") {[0m
-[0m[[0m[31merror[0m] [0m[0m    ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\USER\IdeaProjects\project_note_back-end\src\main\scala\testRoutes.scala:10:9: not found: value complete[0m
-[0m[[0m[31merror[0m] [0m[0m        complete(print("working"))[0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\DocumentUploadWebsocket.scala:8:20: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: Streamed(_), Streamed(_), Strict(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m  Flow[Message].map{[0m
+[0m[[0m[33mwarn[0m] [0m[0m                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

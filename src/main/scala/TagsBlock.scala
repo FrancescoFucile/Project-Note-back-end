@@ -1,1 +1,1 @@
-case class TagsBlock(teacher:  String, subject: String, hash: String)
+case class TagsBlock(teacher:  String, subject: String)
