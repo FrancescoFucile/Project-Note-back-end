@@ -4,7 +4,7 @@
 		module="project_note_back-end$sources"
 		revision="0.1"
 		status="integration"
-		publication="20171112195600"
+		publication="20171123174007"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

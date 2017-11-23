@@ -5,7 +5,7 @@ trait TestRoutes {
   lazy val testRoute: Route =
     pathSingleSlash {
       get {
-        complete("mannaggia scala porco buddha bestia")
+        complete("questo è un test.")
       }
     }
 }

@@ -2149,24 +2149,24 @@
 [debug] == resolving dependencies project_note_back-end#project_note_back-end$sources;0.1->org.scala-lang#scala-compiler;2.12.4 [scala-tool->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-stream_2.12;2.5.6!akka-stream_2.12.jar(src)
 [debug] 	[NOT REQUIRED] io.spray#spray-json_2.12;1.3.3!spray-json_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-java8-compat_2.12;0.8.0!scala-java8-compat_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-http_2.12;10.0.10!akka-http_2.12.jar(src)
-[debug] 	[NOT REQUIRED] jline#jline;2.14.5!jline.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4!scala-parser-combinators_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.4!scala-reflect.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe#ssl-config-core_2.12;0.2.2!ssl-config-core_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-http-spray-json_2.12;10.0.10!akka-http-spray-json_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.4!scala-library.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-parsing_2.12;10.0.10!akka-parsing_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-stream_2.12;2.5.6!akka-stream_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe#ssl-config-core_2.12;0.2.2!ssl-config-core_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-http-core_2.12;10.0.10!akka-http-core_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-http_2.12;10.0.10!akka-http_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-parsing_2.12;10.0.10!akka-parsing_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4!scala-parser-combinators_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.reactivestreams#reactive-streams;1.0.1!reactive-streams.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-java8-compat_2.12;0.8.0!scala-java8-compat_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe#config;1.3.1!config.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.12;2.5.6!akka-actor_2.12.jar(src)
-[debug] :: resolution report :: resolve 513ms :: artifacts dl 15ms
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.4!scala-reflect.jar(src)
+[debug] 	[NOT REQUIRED] jline#jline;2.14.5!jline.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar(src)
+[debug] :: resolution report :: resolve 690ms :: artifacts dl 44ms
 [debug] 	report for project_note_back-end#project_note_back-end$sources;0.1 compile produced in E:\Projects\Project-Note-back-end\target\scala-2.12\resolution-cache\reports\project_note_back-end-project_note_back-end$sources-compile.xml
 [debug] 	report for project_note_back-end#project_note_back-end$sources;0.1 runtime produced in E:\Projects\Project-Note-back-end\target\scala-2.12\resolution-cache\reports\project_note_back-end-project_note_back-end$sources-runtime.xml
 [debug] 	report for project_note_back-end#project_note_back-end$sources;0.1 test produced in E:\Projects\Project-Note-back-end\target\scala-2.12\resolution-cache\reports\project_note_back-end-project_note_back-end$sources-test.xml
@@ -2178,4 +2178,4 @@
 [debug] 	report for project_note_back-end#project_note_back-end$sources;0.1 plugin produced in E:\Projects\Project-Note-back-end\target\scala-2.12\resolution-cache\reports\project_note_back-end-project_note_back-end$sources-plugin.xml
 [debug] 	report for project_note_back-end#project_note_back-end$sources;0.1 pom produced in E:\Projects\Project-Note-back-end\target\scala-2.12\resolution-cache\reports\project_note_back-end-project_note_back-end$sources-pom.xml
 [debug] 	report for project_note_back-end#project_note_back-end$sources;0.1 scala-tool produced in E:\Projects\Project-Note-back-end\target\scala-2.12\resolution-cache\reports\project_note_back-end-project_note_back-end$sources-scala-tool.xml
-[debug] 	resolve done (513ms resolve - 15ms download)
+[debug] 	resolve done (690ms resolve - 44ms download)
