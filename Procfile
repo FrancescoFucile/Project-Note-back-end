@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/NoteService -Dhttp.port=${PORT}
+web: target/universal/stage/bin/project_note_back-end -Dhttp.port=${PORT}

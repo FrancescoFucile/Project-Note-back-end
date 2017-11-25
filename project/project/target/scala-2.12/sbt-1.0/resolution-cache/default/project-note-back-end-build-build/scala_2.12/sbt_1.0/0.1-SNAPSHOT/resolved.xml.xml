@@ -4,7 +4,7 @@
 		module="project-note-back-end-build-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171123173850"
+		publication="20171125145937"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

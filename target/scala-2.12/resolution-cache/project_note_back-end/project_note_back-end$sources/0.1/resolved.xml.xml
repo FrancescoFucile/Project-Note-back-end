@@ -4,7 +4,7 @@
 		module="project_note_back-end$sources"
 		revision="0.1"
 		status="integration"
-		publication="20171123174007"
+		publication="20171125145956"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -12,6 +12,14 @@
 		<conf name="test" visibility="public" description="" extends="runtime"/>
 		<conf name="provided" visibility="public" description=""/>
 		<conf name="optional" visibility="public" description=""/>
+		<conf name="universal" visibility="public" description=""/>
+		<conf name="universal-docs" visibility="public" description=""/>
+		<conf name="universal-src" visibility="public" description=""/>
+		<conf name="windows" visibility="public" description=""/>
+		<conf name="docker" visibility="public" description=""/>
+		<conf name="linux" visibility="public" description=""/>
+		<conf name="rpm" visibility="public" description="" extends="linux"/>
+		<conf name="debian" visibility="public" description="" extends="linux"/>
 		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
 		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
 		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
@@ -42,7 +50,7 @@
 			<artifact name="akka-stream_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
-		<dependency org="org.scala-lang.modules" name="scala-xml_2.12" rev="1.0.6" transitive="false" conf="scala-tool->master(*),compile,runtime(*),runtime,compile(*),master">
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.12" rev="1.0.6" transitive="false" conf="runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master;scala-tool->master(*),compile,runtime(*),runtime,compile(*),master">
 			<artifact name="scala-xml_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
@@ -58,7 +66,7 @@
 			<artifact name="akka-parsing_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
-		<dependency org="org.scala-lang" name="scala-reflect" rev="2.12.4" transitive="false" conf="scala-tool->master(*),compile,runtime(*),runtime,compile(*),master" info.apiURL="http://www.scala-lang.org/api/2.12.4/">
+		<dependency org="org.scala-lang" name="scala-reflect" rev="2.12.4" transitive="false" conf="runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master;scala-tool->master(*),compile,runtime(*),runtime,compile(*),master" info.apiURL="http://www.scala-lang.org/api/2.12.4/">
 			<artifact name="scala-reflect" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
@@ -70,7 +78,7 @@
 			<artifact name="jline" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
-		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.4" transitive="false" conf="scala-tool->default,compile,runtime,optional,optional(default),master">
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.4" transitive="false" conf="runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master;scala-tool->default,compile,runtime,optional,optional(default),master">
 			<artifact name="scala-compiler" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>

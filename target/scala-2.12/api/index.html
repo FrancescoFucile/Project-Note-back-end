@@ -1,0 +1,314 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <title></title>
+          <meta name="description" content="" />
+          <meta name="keywords" content="" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="lib/index.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="lib/jquery.js"></script>
+      <script type="text/javascript" src="lib/jquery.panzoom.min.js"></script>
+      <script type="text/javascript" src="lib/jquery.mousewheel.min.js"></script>
+      <script type="text/javascript" src="lib/index.js"></script>
+      <script type="text/javascript" src="index.js"></script>
+      <script type="text/javascript" src="lib/scheduler.js"></script>
+      <script type="text/javascript" src="lib/template.js"></script>
+      <script type="text/javascript" src="lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+        /* this variable can be used by the JS to determine the path to the root document */
+        var toRoot = '';
+      </script>
+    
+        </head>
+        <body>
+      <div id="search">
+        <span id="doc-title"><span id="doc-version"></span></span>
+        <span class="close-results"><span class="left">&lt;</span> Back</span>
+        <div id="textfilter">
+          <span class="input">
+            <input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/" />
+            <i class="clear material-icons"></i>
+            <i id="search-icon" class="material-icons"></i>
+          </span>
+        </div>
+    </div>
+      <div id="search-results">
+        <div id="search-progress">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="results-content">
+          <div id="entity-results"></div>
+          <div id="member-results"></div>
+        </div>
+      </div>
+      <div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;">
+        <div id="content-container" style="-webkit-overflow-scrolling: touch;">
+          <div id="subpackage-spacer">
+            <div id="packages">
+              <h1>Packages</h1>
+              <ul>
+                <li name="_root_.root" visbl="pub" class="indented0 current" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="_root_"></a><a id="root:_root_"></a>
+      <span class="permalink">
+      <a href="index.html#_root_" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">root</span>
+      </span>
+      
+      
+    </li><li class="current-entities indented0">
+                        <span class="separator"></span>
+                        <a class="object" href="DocumentUploadWebsocket$.html" title=""></a>
+                        <a href="DocumentUploadWebsocket$.html" title="">DocumentUploadWebsocket</a>
+                      </li><li class="current-entities indented0">
+                        <span class="separator"></span>
+                        <a class="trait" href="NoteServer.html" title=""></a>
+                        <a href="NoteServer.html" title="">NoteServer</a>
+                      </li><li class="current-entities indented0">
+                        <span class="separator"></span>
+                        <a class="object" href="NoteService$.html" title=""></a>
+                        <a href="NoteService$.html" title="">NoteService</a>
+                      </li><li class="current-entities indented0">
+                        <span class="separator"></span>
+                        <a class="class" href="TagsBlock.html" title=""></a>
+                        <a href="TagsBlock.html" title="">TagsBlock</a>
+                      </li><li class="current-entities indented0">
+                        <span class="separator"></span>
+                        <a class="trait" href="TagsJsonSupport.html" title=""></a>
+                        <a href="TagsJsonSupport.html" title="">TagsJsonSupport</a>
+                      </li><li class="current-entities indented0">
+                        <span class="separator"></span>
+                        <a class="trait" href="TestRoutes.html" title=""></a>
+                        <a href="TestRoutes.html" title="">TestRoutes</a>
+                      </li><li class="current-entities indented0">
+                        <span class="separator"></span>
+                        <a class="trait" href="UploadRoutes.html" title=""></a>
+                        <a href="UploadRoutes.html" title="">UploadRoutes</a>
+                      </li>
+              </ul>
+            </div>
+          </div>
+          <div id="content">
+            <body class="package value">
+      <div id="definition">
+        <div class="big-circle package">p</div>
+        
+        <h1>root package<span class="permalink">
+      <a href="index.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span></h1>
+        
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">root</span>
+      </span>
+      </h4>
+
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div class="toggle"></div>
+        <div id="memberfilter">
+          <i class="material-icons arrow"></i>
+          <span class="input">
+            <input id="mbrsel-input" placeholder="Filter all members" type="text" accesskey="/" />
+          </span>
+          <i class="clear material-icons"></i>
+        </div>
+        <div id="filterby">
+          <div id="order">
+            <span class="filtertype">Ordering</span>
+            <ol>
+              
+              <li class="alpha in"><span>Alphabetic</span></li>
+              
+            </ol>
+          </div>
+          
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+            </div>
+        </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="_root_.NoteServer" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NoteServerextendsTestRouteswithUploadRoutes"></a><a id="NoteServer:NoteServer"></a>
+      <span class="permalink">
+      <a href="index.html#NoteServerextendsTestRouteswithUploadRoutes" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="NoteServer.html"><span class="name">NoteServer</span></a><span class="result"> extends <a href="TestRoutes.html" class="extype" name="TestRoutes">TestRoutes</a> with <a href="UploadRoutes.html" class="extype" name="UploadRoutes">UploadRoutes</a></span>
+      </span>
+      
+      
+    </li><li name="_root_.TagsBlock" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TagsBlockextendsProductwithSerializable"></a><a id="TagsBlock:TagsBlock"></a>
+      <span class="permalink">
+      <a href="index.html#TagsBlockextendsProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="TagsBlock.html"><span class="name">TagsBlock</span></a><span class="params">(<span name="teacher">teacher: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="subject">subject: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="_root_.TagsJsonSupport" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TagsJsonSupportextendsSprayJsonSupportwithDefaultJsonProtocol"></a><a id="TagsJsonSupport:TagsJsonSupport"></a>
+      <span class="permalink">
+      <a href="index.html#TagsJsonSupportextendsSprayJsonSupportwithDefaultJsonProtocol" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="TagsJsonSupport.html"><span class="name">TagsJsonSupport</span></a><span class="result"> extends <span class="extype" name="akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport">SprayJsonSupport</span> with <span class="extype" name="spray.json.DefaultJsonProtocol">DefaultJsonProtocol</span></span>
+      </span>
+      
+      
+    </li><li name="_root_.TestRoutes" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TestRoutesextendsAnyRef"></a><a id="TestRoutes:TestRoutes"></a>
+      <span class="permalink">
+      <a href="index.html#TestRoutesextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="TestRoutes.html"><span class="name">TestRoutes</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      
+    </li><li name="_root_.UploadRoutes" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="UploadRoutesextendsDirectiveswithTagsJsonSupport"></a><a id="UploadRoutes:UploadRoutes"></a>
+      <span class="permalink">
+      <a href="index.html#UploadRoutesextendsDirectiveswithTagsJsonSupport" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="UploadRoutes.html"><span class="name">UploadRoutes</span></a><span class="result"> extends <span class="extype" name="akka.http.scaladsl.server.Directives">Directives</span> with <a href="TagsJsonSupport.html" class="extype" name="TagsJsonSupport">TagsJsonSupport</a></span>
+      </span>
+      
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div class="values members">
+              <h3>Value Members</h3>
+              <ol>
+                <li name="_root_.DocumentUploadWebsocket" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DocumentUploadWebsocket"></a><a id="DocumentUploadWebsocket:DocumentUploadWebsocket"></a>
+      <span class="permalink">
+      <a href="index.html#DocumentUploadWebsocket" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="DocumentUploadWebsocket$.html"><span class="name">DocumentUploadWebsocket</span></a>
+      </span>
+      
+      
+    </li><li name="_root_.NoteService" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NoteService"></a><a id="NoteService:NoteService"></a>
+      <span class="permalink">
+      <a href="index.html#NoteService" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="NoteService$.html"><span class="name">NoteService</span></a><span class="result"> extends <span class="extype" name="scala.App">App</span> with <a href="NoteServer.html" class="extype" name="NoteServer">NoteServer</a></span>
+      </span>
+      
+      
+    </li>
+              </ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+    </body>
+          </div>
+        </div>
+      </div>
+    </body>
+      </html>
