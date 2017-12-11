@@ -15,6 +15,7 @@ class AMQPReceiver(host: String, handler: String => Unit ) {
 
     override def handleDelivery(consumerTag: String, envelope: Envelope, properties: AMQP.BasicProperties, body: Array[Byte]) {
       var message = new String(body, "UTF-8")
+      println(s"message received: $message")
       handler(message)
     }
   }

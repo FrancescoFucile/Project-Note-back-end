@@ -5,7 +5,7 @@ import akka.stream.scaladsl.FileIO
 
 import scala.util._
 
-trait UploadRoutes extends Directives with TagsJsonSupport with DatabaseInterface{
+trait UploadRoutes extends Directives with TagsJsonSupport with DatabaseInterface {
   this: NoteServer =>
 
   import DocumentUploadWebsocket._
@@ -19,22 +19,22 @@ trait UploadRoutes extends Directives with TagsJsonSupport with DatabaseInterfac
             val subject = tagsBlock.subject
             complete(s"prof $teacher on subject $subject")
           }
-        }/* ~
+        } /* ~
         path(Remaining) { string: String => print(string)
           handleWebSocketMessages(documentUploadFLow)
         }*/
-      }~
-      pathPrefix("tryUpload") {
-        pathEnd {
-          entity(as[String]) { string =>
-            println("received upload request")
-          complete(uploadNote(string))
+      } ~
+        pathPrefix("tryUpload") {
+          pathEnd {
+            entity(as[String]) { string =>
+              println("received upload request")
+              onComplete(uploadNote(string)){
+                case Success(noteID) => complete (s"received server response: $noteID")
+                case Failure(ex) => complete (s"failed to contact server: $ex")
+              }
+            }
           }
-        }/* ~
-        path(Remaining) { string: String => print(string)
-          handleWebSocketMessages(documentUploadFLow)
-        }*/
-      }
+        }
     } ~
       get {
         path("ws") {

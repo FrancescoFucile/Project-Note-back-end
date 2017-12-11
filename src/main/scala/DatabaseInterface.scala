@@ -10,25 +10,29 @@ trait DatabaseInterface extends DatabaseInterfaceConfig with DBJsonSupport {
 
   class Uploader(uploaderID: String) {
     val noteID = Promise[String]()
+
     def completeUploader(receiverNoteID: String) = {
       noteID.success(receiverNoteID)
     }
   }
 
-  def handler(message: String): Unit = {
-
-    val messageType = message.parseJson.convertTo[DBMessage].messageType
-    val messageBody = message.parseJson.convertTo[DBMessage].body
+  def handler(messageString: String): Unit = {
+    println(s"processing message: $messageString")
+    val message = messageString.parseJson.convertTo[DBMessage]
+    println(s"parsed message: $message")
+    val messageType = message.messageType
+    val messageBody = message.body
     messageType match {
       case "uploadResponse" =>
         println("RECEIVER UPLOAD RESPONSE")
         val uploaderIDopt = messageBody.get("uploaderID")
         val noteIDOpt = messageBody.get("noteID")
-        if(uploaderIDopt.nonEmpty && noteIDOpt.nonEmpty){
+        if (uploaderIDopt.nonEmpty && noteIDOpt.nonEmpty) {
           val uploaderID = uploaderIDopt.get
           val noteID = noteIDOpt.get
+          println(s"uploaderID: $uploaderID\nnoteID: $noteID")
           val uploaderOpt = uploaders.get(uploaderID)
-          if(uploaderOpt.nonEmpty){
+          if (uploaderOpt.nonEmpty) {
             val uploader = uploaderOpt.get
             uploader.completeUploader(noteID)
           }
@@ -37,32 +41,30 @@ trait DatabaseInterface extends DatabaseInterfaceConfig with DBJsonSupport {
     }
   }
 
-  var uploaders = Map[String,Uploader]()
+  var uploaders = Map[String, Uploader]()
 
   val sender = new AMQPSender(DBUrl)
-  val receiver = new AMQPReceiver(DBUrl, handler)
+  val receiver = new AMQPReceiver("localhost", handler)
 
-  val uploadQueueName = "NOTE_UPLOAD"
-  sender.declareQueue(uploadQueueName)
+  val uploadRequestQueueName = "NOTE_UPLOAD_REQUEST"
+  sender.declareQueue(uploadRequestQueueName)
+
+  val uploadResponseQueueName = "NOTE_UPLOAD_RESPONSE"
+  receiver.declareQueue(uploadResponseQueueName)
 
   val streamingQueueName = "STREAMING_QUEUE"
   sender.declareQueue(streamingQueueName)
 
-  def uploadNote(uploaderID: String): String = {
+  def uploadNote(uploaderID: String): Future[String] = {
     println(s"uploading note $uploaderID")
     val uploader = new Uploader(uploaderID)
     uploaders += ((uploaderID, uploader))
-    sender.sendMessage(uploadQueueName, uploaderID)
+    sender.sendMessage(uploadRequestQueueName, uploaderID)
     val noteIDHolder = uploader.noteID.future
-    var noteID: String = ""
-    noteIDHolder.onComplete{
-      case Success(string) =>
-        println("SENDING RESPONSE TO CLIENT")
-        noteID = string
-      case Failure(_) => "ERROR"
-    }
-    noteID
+    noteIDHolder
   }
+
+  receiver.consume(uploadResponseQueueName)
 
   case class Page(noteID: String, page: Int) {
     override def toString: String = s"{noteID:$noteID,page:$page}"
