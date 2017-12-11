@@ -81,7 +81,7 @@ set _JAVA_PARAMS=
 set _APP_ARGS=
 
 set "APP_CLASSPATH=%APP_LIB_DIR%\project_note_back-end.project_note_back-end-0.1.jar;%APP_LIB_DIR%\org.scala-lang.scala-library-2.12.4.jar;%APP_LIB_DIR%\com.typesafe.akka.akka-actor_2.12-2.5.6.jar;%APP_LIB_DIR%\com.typesafe.config-1.3.1.jar;%APP_LIB_DIR%\org.scala-lang.modules.scala-java8-compat_2.12-0.8.0.jar;%APP_LIB_DIR%\com.typesafe.akka.akka-stream_2.12-2.5.6.jar;%APP_LIB_DIR%\org.reactivestreams.reactive-streams-1.0.1.jar;%APP_LIB_DIR%\com.typesafe.ssl-config-core_2.12-0.2.2.jar;%APP_LIB_DIR%\org.scala-lang.modules.scala-parser-combinators_2.12-1.0.4.jar;%APP_LIB_DIR%\com.typesafe.akka.akka-http-spray-json_2.12-10.0.10.jar;%APP_LIB_DIR%\com.typesafe.akka.akka-http_2.12-10.0.10.jar;%APP_LIB_DIR%\com.typesafe.akka.akka-http-core_2.12-10.0.10.jar;%APP_LIB_DIR%\com.typesafe.akka.akka-parsing_2.12-10.0.10.jar;%APP_LIB_DIR%\io.spray.spray-json_2.12-1.3.3.jar;%APP_LIB_DIR%\org.scala-lang.scala-compiler-2.12.4.jar;%APP_LIB_DIR%\org.scala-lang.scala-reflect-2.12.4.jar;%APP_LIB_DIR%\org.scala-lang.modules.scala-xml_2.12-1.0.6.jar"
-set "APP_MAIN_CLASS=NoteService.scala"
+set "APP_MAIN_CLASS=NoteService"
 set "SCRIPT_CONF_FILE=%APP_HOME%\conf\application.ini"
 
 rem if configuration files exist, prepend their contents to the script arguments so it can be processed by this runner

@@ -4,7 +4,7 @@
 		module="project_note_back-end_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20171124172933"
+		publication="20171205130839"
 	>
 		<description>
 		project_note_back-end
@@ -43,5 +43,6 @@
 		<dependency org="com.typesafe.akka" name="akka-actor_2.12" rev="2.5.6" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-stream_2.12" rev="2.5.6" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-http-spray-json_2.12" rev="10.0.10" conf="compile->default(compile)"/>
+		<dependency org="com.rabbitmq" name="amqp-client" rev="5.0.0" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

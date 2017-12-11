@@ -9,14 +9,4 @@ import scala.io.StdIn
 object NoteService extends App with NoteServer {
 
   val serverBindingFuture: Future[ServerBinding] = Http().bindAndHandle(mainRoute, "0.0.0.0", sys.env("PORT").toInt)
-
-  /*println(s"Server online at http://localhost:8080/\nPress RETURN to stop...")
-
-  StdIn.readLine()
-
-  serverBindingFuture
-    .flatMap(_.unbind())
-    .onComplete { done =>
-      system.terminate()
-    }*/
 }

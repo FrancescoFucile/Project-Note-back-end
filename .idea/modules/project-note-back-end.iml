@@ -37,5 +37,7 @@
     <orderEntry type="library" scope="RUNTIME" name="SBT: org.scala-lang:scala-compiler:2.12.4:jar" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="SBT: org.scala-lang:scala-reflect:2.12.4:jar" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="SBT: org.scala-lang.modules:scala-xml_2.12:1.0.6:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.rabbitmq:amqp-client:5.0.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.slf4j:slf4j-api:1.7.25:jar" level="project" />
   </component>
 </module>

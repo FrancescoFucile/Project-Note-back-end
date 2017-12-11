@@ -3,9 +3,9 @@ import akka.http.scaladsl.server.Route
 
 trait TestRoutes {
   lazy val testRoute: Route =
-    pathSingleSlash {
+    path("HealthCheck") {
       get {
-        complete("questo è un test.")
+        complete("alive")
       }
     }
 }
