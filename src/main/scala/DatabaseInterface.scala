@@ -8,11 +8,11 @@ trait DatabaseInterface extends DatabaseInterfaceConfig with DBJsonSupport {
 
   this: NoteServer =>
 
-  class Uploader(uploaderID: String) {
-    val noteID = Promise[String]()
+  class SearchQuery(uploaderID: String) {
+    val noteListJSON = Promise[String]()
 
-    def completeUploader(receiverNoteID: String) = {
-      noteID.success(receiverNoteID)
+    def completeQuery(noteListJSON: String) = {
+      this.noteListJSON.success(noteListJSON)
     }
   }
 
@@ -23,56 +23,56 @@ trait DatabaseInterface extends DatabaseInterfaceConfig with DBJsonSupport {
     val messageType = message.messageType
     val messageBody = message.body
     messageType match {
-      case "uploadResponse" =>
-        println("RECEIVER UPLOAD RESPONSE")
-        val uploaderIDopt = messageBody.get("uploaderID")
-        val noteIDOpt = messageBody.get("noteID")
-        if (uploaderIDopt.nonEmpty && noteIDOpt.nonEmpty) {
-          val uploaderID = uploaderIDopt.get
-          val noteID = noteIDOpt.get
-          println(s"uploaderID: $uploaderID\nnoteID: $noteID")
-          val uploaderOpt = uploaders.get(uploaderID)
-          if (uploaderOpt.nonEmpty) {
-            val uploader = uploaderOpt.get
-            uploader.completeUploader(noteID)
+      case "note_query" => {
+        println("received note query")
+        val queryID_opt = messageBody.get("query_ID")
+        val noteList_opt = messageBody.get("note_list")
+        if (queryID_opt.nonEmpty && noteList_opt.nonEmpty) {
+          val queryID = queryID_opt.get
+          val noteList = noteList_opt.get
+          println(s"query ID: $queryID\nnote list: $noteList")
+          val searchQuery_opt = searchQueries.get(queryID)
+          if (searchQuery_opt.nonEmpty) {
+            val searchQuery = searchQuery_opt.get
+            searchQuery.completeQuery(noteList)
           }
         }
-      case _ => println("MESSAGE NOT RECOGNIZED")
+      }
+      case _ => println("error: message not recognized")
     }
   }
 
-  var uploaders = Map[String, Uploader]()
+  var searchQueries = Map[String, SearchQuery]()
 
   val sender = new AMQPSender(DBUrl)
   val receiver = new AMQPReceiver("localhost", handler)
 
-  val uploadRequestQueueName = "NOTE_UPLOAD_REQUEST"
-  sender.declareQueue(uploadRequestQueueName)
+  val searchQueryRequestQueueName = "SEARCH_QUERY_REQUEST"
+  sender.declareQueue(searchQueryRequestQueueName)
 
-  val uploadResponseQueueName = "NOTE_UPLOAD_RESPONSE"
-  receiver.declareQueue(uploadResponseQueueName)
+  val searchQueryResponseName = "SEARCH_QUERY_RESPONSE"
+  receiver.declareQueue(searchQueryResponseName)
 
-  val streamingQueueName = "STREAMING_QUEUE"
-  sender.declareQueue(streamingQueueName)
+  val pageQueryQueueName = "PAGE_QUERY"
+  sender.declareQueue(pageQueryQueueName)
 
-  def uploadNote(uploaderID: String): Future[String] = {
-    println(s"uploading note $uploaderID")
-    val uploader = new Uploader(uploaderID)
-    uploaders += ((uploaderID, uploader))
-    sender.sendMessage(uploadRequestQueueName, uploaderID)
-    val noteIDHolder = uploader.noteID.future
-    noteIDHolder
+  def searchNotes(searchQuery_ID: String): Future[String] = {
+    println(s"new search query: $searchQuery_ID")
+    val searchQuery = new SearchQuery(searchQuery_ID)
+    searchQueries += ((searchQuery_ID, searchQuery))
+    sender.sendMessage(searchQueryRequestQueueName, searchQuery_ID)
+    val noteListHolder = searchQuery.noteListJSON.future
+    noteListHolder
   }
 
-  receiver.consume(uploadResponseQueueName)
+  receiver.consume(searchQueryResponseName)
 
-  case class Page(noteID: String, page: Int) {
-    override def toString: String = s"{noteID:$noteID,page:$page}"
+  /*case class PageRequest(noteID: String, page: Int, clientID: String) {
+    override def toString: String = s"{noteID:$noteID,page:$page, clientID: $clientID}"
+  }*/
+
+  def requestPage(pageRequest: String) = {
+    sender.sendMessage(pageQueryQueueName, pageRequest)
   }
-
-  def streamPage(noteID: String, page: Int) = {
-    sender.sendMessage(streamingQueueName, Page(noteID, page).toString)
-  }
-
 
 }

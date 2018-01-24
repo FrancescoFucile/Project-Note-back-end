@@ -1,13 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\DatabaseInterface.scala:23:12: patterns after a variable pattern cannot match (SLS 8.1.1)[0m
-[0m[[0m[33mwarn[0m] [0m[0mIf you intended to match against method uploadResponse in trait DatabaseInterfaceConfig, you must use backticks, like: case `uploadResponse` =>[0m
-[0m[[0m[33mwarn[0m] [0m[0m      case uploadResponse =>[0m
-[0m[[0m[33mwarn[0m] [0m[0m           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\DatabaseInterface.scala:36:24: unreachable code due to variable pattern 'uploadResponse' on line 23[0m
-[0m[[0m[33mwarn[0m] [0m[0m      case _ => println("MESSAGE NOT RECOGNIZED")[0m
-[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\NoteServer.scala:10:16: overriding value executionContext in trait DatabaseInterface of type scala.concurrent.ExecutionContextExecutor;[0m
-[0m[[0m[31merror[0m] [0m[0m value executionContext needs `override' modifier[0m
-[0m[[0m[31merror[0m] [0m[0m  implicit val executionContext: ExecutionContext = system.dispatcher[0m
-[0m[[0m[31merror[0m] [0m[0m               ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
+[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\WebpagesRoutes.scala:13:44: value text/html(UTF-8) is not a member of object akka.http.javadsl.model.ContentTypes[0m
+[0m[[0m[31merror[0m] [0m[0m          complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h1>Say hello to akka-http</h1>"))[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

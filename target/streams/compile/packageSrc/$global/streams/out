@@ -1,1 +1,35 @@
-[0m[[0m[0mdebug[0m] [0m[0mJar uptodate: E:\Projects\Project-Note-back-end\target\scala-2.12\project_note_back-end_2.12-0.1-sources.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mPackaging E:\Projects\Project-Note-back-end\target\scala-2.12\project_note_back-end_2.12-0.1-sources.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DBJsonSupport.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\DBJsonSupport.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TagsBlock.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\TagsBlock.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	NoteService.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\NoteService.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	NoteServer.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\NoteServer.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SearchRoutes.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\SearchRoutes.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Configuration.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\Configuration.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TagsJsonSupport.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\TagsJsonSupport.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TestRoutes.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\TestRoutes.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	testHTML.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\resources\testHTML.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DatabaseInterfaceConfig.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\DatabaseInterfaceConfig.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DatabaseInterface.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\DatabaseInterface.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	WebpagesRoutes.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\WebpagesRoutes.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AMQPSender.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\AMQPSender.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PageRequestWSRoutes.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\PageRequestWSRoutes.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AMQPReceiver.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\AMQPReceiver.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PageRequestWebSocket.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\src\main\scala\PageRequestWebSocket.scala[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m

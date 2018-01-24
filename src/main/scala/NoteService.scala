@@ -8,7 +8,9 @@ import scala.io.StdIn
 
 object NoteService extends App with NoteServer {
 
-  println("server started")
+  val port = sys.env("PORT").toInt
 
-  val serverBindingFuture: Future[ServerBinding] = Http().bindAndHandle(mainRoute, "0.0.0.0", sys.env("PORT").toInt)
+  println(s"server started on $port")
+
+  val serverBindingFuture: Future[ServerBinding] = Http().bindAndHandle(mainRoute, "0.0.0.0", port)
 }

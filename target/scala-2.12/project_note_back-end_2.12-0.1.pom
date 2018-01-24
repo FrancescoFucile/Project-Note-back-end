@@ -37,5 +37,10 @@
             <artifactId>akka-http-spray-json_2.12</artifactId>
             <version>10.0.10</version>
         </dependency>
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>5.0.0</version>
+        </dependency>
     </dependencies>
 </project>
