@@ -1,8 +1,11 @@
 import com.rabbitmq.client.ConnectionFactory
 
-class AMQPSender(host: String) {
+class AMQPSender(host: String, user: String, vhost: String, password: String) {
   val factory = new ConnectionFactory()
   factory.setHost(host)
+  factory.setUsername(user)
+  factory.setPassword(password)
+  factory.setVirtualHost(vhost)
   val connection = factory.newConnection()
   val channel = connection.createChannel()
 

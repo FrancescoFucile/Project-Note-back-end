@@ -44,8 +44,8 @@ trait DatabaseInterface extends DatabaseInterfaceConfig with DBJsonSupport {
 
   var searchQueries = Map[String, SearchQuery]()
 
-  val sender = new AMQPSender(DBUrl)
-  val receiver = new AMQPReceiver("localhost", handler)
+  val sender = new AMQPSender("elephant.rmq.cloudamqp.com", "dmvjdchv", "dmvjdchv", "gnTdpWJY_-lNeJsTawxWELBmtuB1nGfF")
+  val receiver = new AMQPReceiver("elephant.rmq.cloudamqp.com", "dmvjdchv", "dmvjdchv", "gnTdpWJY_-lNeJsTawxWELBmtuB1nGfF",  handler)
 
   val searchQueryRequestQueueName = "SEARCH_QUERY_REQUEST"
   sender.declareQueue(searchQueryRequestQueueName)

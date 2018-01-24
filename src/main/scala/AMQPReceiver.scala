@@ -2,10 +2,13 @@ import java.util.regex.Pattern
 
 import com.rabbitmq.client._
 
-class AMQPReceiver(host: String, handler: String => Unit ) {
+class AMQPReceiver(host: String, user: String, vhost: String, password: String, handler: String => Unit ) {
 
   val factory = new ConnectionFactory()
   factory.setHost(host)
+  factory.setUsername(user)
+  factory.setPassword(password)
+  factory.setVirtualHost(vhost)
   val connection = factory.newConnection()
   val channel = connection.createChannel()
 
