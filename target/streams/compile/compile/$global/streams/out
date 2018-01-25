@@ -1,10 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\WebpagesRoutes.scala:24:25: unclosed character literal[0m
-[0m[[0m[31merror[0m] [0m[0m          val content = '{"list":[{"val":"a"},{"val":"b"},{"val":"c"}]}'[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\WebpagesRoutes.scala:24:72: unclosed character literal[0m
-[0m[[0m[31merror[0m] [0m[0m          val content = '{"list":[{"val":"a"},{"val":"b"},{"val":"c"}]}'[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                       ^[0m
-[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\WebpagesRoutes.scala:24:71: Unmatched closing brace '}' ignored here[0m
-[0m[[0m[31merror[0m] [0m[0m          val content = '{"list":[{"val":"a"},{"val":"b"},{"val":"c"}]}'[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
+[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\Utils.scala:8:3: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: akka.http.scaladsl.model.HttpResponse[0m
+[0m[[0m[31merror[0m] [0m[0m  }[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m

@@ -24,7 +24,7 @@ trait DatabaseInterface extends DBJsonSupport {
     val messageBody = message.body
     messageType match {
       case "note_query" => {
-        println("received note query")
+        println("received note query response from db on amqp:")
         val queryID_opt = messageBody.get("query_ID")
         val noteList_opt = messageBody.get("note_list")
         if (queryID_opt.nonEmpty && noteList_opt.nonEmpty) {
@@ -56,7 +56,7 @@ trait DatabaseInterface extends DBJsonSupport {
   val pageQueryQueueName = "PAGE_QUERY"
   sender.declareQueue(pageQueryQueueName)
 
-  def searchNotes(searchQuery_ID: String): Future[String] = {
+  def searchNotes(searchParameters: String, searchQuery_ID: String): Future[String] = {
     println(s"new search query: $searchQuery_ID")
     val searchQuery = new SearchQuery(searchQuery_ID)
     searchQueries += ((searchQuery_ID, searchQuery))
