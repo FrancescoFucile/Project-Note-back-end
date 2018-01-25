@@ -1,4 +1,10 @@
-[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\SearchRoutes.scala:5:44: not found: type TagsJsonSupport[0m
-[0m[[0m[31merror[0m] [0m[0mtrait SearchRoutes extends Directives with TagsJsonSupport with DatabaseInterface with PageRequestWebSocket {[0m
-[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\WebpagesRoutes.scala:24:25: unclosed character literal[0m
+[0m[[0m[31merror[0m] [0m[0m          val content = '{"list":[{"val":"a"},{"val":"b"},{"val":"c"}]}'[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\WebpagesRoutes.scala:24:72: unclosed character literal[0m
+[0m[[0m[31merror[0m] [0m[0m          val content = '{"list":[{"val":"a"},{"val":"b"},{"val":"c"}]}'[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\WebpagesRoutes.scala:24:71: Unmatched closing brace '}' ignored here[0m
+[0m[[0m[31merror[0m] [0m[0m          val content = '{"list":[{"val":"a"},{"val":"b"},{"val":"c"}]}'[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
