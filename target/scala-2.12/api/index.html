@@ -79,20 +79,12 @@
                         <a href="AMQPSender.html" title="">AMQPSender</a>
                       </li><li class="current-entities indented0">
                         <span class="separator"></span>
-                        <a class="trait" href="Configuration.html" title=""></a>
-                        <a href="Configuration.html" title="">Configuration</a>
-                      </li><li class="current-entities indented0">
-                        <span class="separator"></span>
                         <a class="trait" href="DBJsonSupport.html" title=""></a>
                         <a href="DBJsonSupport.html" title="">DBJsonSupport</a>
                       </li><li class="current-entities indented0">
                         <span class="separator"></span>
                         <a class="trait" href="DatabaseInterface.html" title=""></a>
                         <a href="DatabaseInterface.html" title="">DatabaseInterface</a>
-                      </li><li class="current-entities indented0">
-                        <span class="separator"></span>
-                        <a class="trait" href="DatabaseInterfaceConfig.html" title=""></a>
-                        <a href="DatabaseInterfaceConfig.html" title="">DatabaseInterfaceConfig</a>
                       </li><li class="current-entities indented0">
                         <span class="separator"></span>
                         <a class="trait" href="NoteServer.html" title=""></a>
@@ -113,14 +105,6 @@
                         <span class="separator"></span>
                         <a class="trait" href="SearchRoutes.html" title=""></a>
                         <a href="SearchRoutes.html" title="">SearchRoutes</a>
-                      </li><li class="current-entities indented0">
-                        <span class="separator"></span>
-                        <a class="class" href="TagsBlock.html" title=""></a>
-                        <a href="TagsBlock.html" title="">TagsBlock</a>
-                      </li><li class="current-entities indented0">
-                        <span class="separator"></span>
-                        <a class="trait" href="TagsJsonSupport.html" title=""></a>
-                        <a href="TagsJsonSupport.html" title="">TagsJsonSupport</a>
                       </li><li class="current-entities indented0">
                         <span class="separator"></span>
                         <a class="trait" href="TestRoutes.html" title=""></a>
@@ -224,22 +208,6 @@
       </span>
       
       
-    </li><li name="_root_.Configuration" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ConfigurationextendsAnyRef"></a><a id="Configuration:Configuration"></a>
-      <span class="permalink">
-      <a href="index.html#ConfigurationextendsAnyRef" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="Configuration.html"><span class="name">Configuration</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      
-      
     </li><li name="_root_.DBJsonSupport" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="DBJsonSupportextendsDefaultJsonProtocol"></a><a id="DBJsonSupport:DBJsonSupport"></a>
       <span class="permalink">
@@ -257,9 +225,9 @@
       
       
     </li><li name="_root_.DatabaseInterface" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="DatabaseInterfaceextendsDatabaseInterfaceConfigwithDBJsonSupport"></a><a id="DatabaseInterface:DatabaseInterface"></a>
+      <a id="DatabaseInterfaceextendsDBJsonSupport"></a><a id="DatabaseInterface:DatabaseInterface"></a>
       <span class="permalink">
-      <a href="index.html#DatabaseInterfaceextendsDatabaseInterfaceConfigwithDBJsonSupport" title="Permalink">
+      <a href="index.html#DatabaseInterfaceextendsDBJsonSupport" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -268,23 +236,7 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="DatabaseInterface.html"><span class="name">DatabaseInterface</span></a><span class="result"> extends <a href="DatabaseInterfaceConfig.html" class="extype" name="DatabaseInterfaceConfig">DatabaseInterfaceConfig</a> with <a href="DBJsonSupport.html" class="extype" name="DBJsonSupport">DBJsonSupport</a></span>
-      </span>
-      
-      
-    </li><li name="_root_.DatabaseInterfaceConfig" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="DatabaseInterfaceConfigextendsConfiguration"></a><a id="DatabaseInterfaceConfig:DatabaseInterfaceConfig"></a>
-      <span class="permalink">
-      <a href="index.html#DatabaseInterfaceConfigextendsConfiguration" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="DatabaseInterfaceConfig.html"><span class="name">DatabaseInterfaceConfig</span></a><span class="result"> extends <a href="Configuration.html" class="extype" name="Configuration">Configuration</a></span>
+        <a title="" href="DatabaseInterface.html"><span class="name">DatabaseInterface</span></a><span class="result"> extends <a href="DBJsonSupport.html" class="extype" name="DBJsonSupport">DBJsonSupport</a></span>
       </span>
       
       
@@ -305,9 +257,9 @@
       
       
     </li><li name="_root_.PageRequestWSRoutes" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="PageRequestWSRoutesextendsDirectiveswithTagsJsonSupportwithDatabaseInterfacewithPageRequestWebSocket"></a><a id="PageRequestWSRoutes:PageRequestWSRoutes"></a>
+      <a id="PageRequestWSRoutesextendsDirectiveswithDatabaseInterfacewithPageRequestWebSocket"></a><a id="PageRequestWSRoutes:PageRequestWSRoutes"></a>
       <span class="permalink">
-      <a href="index.html#PageRequestWSRoutesextendsDirectiveswithTagsJsonSupportwithDatabaseInterfacewithPageRequestWebSocket" title="Permalink">
+      <a href="index.html#PageRequestWSRoutesextendsDirectiveswithDatabaseInterfacewithPageRequestWebSocket" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -316,7 +268,7 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="PageRequestWSRoutes.html"><span class="name">PageRequestWSRoutes</span></a><span class="result"> extends <span class="extype" name="akka.http.scaladsl.server.Directives">Directives</span> with <a href="TagsJsonSupport.html" class="extype" name="TagsJsonSupport">TagsJsonSupport</a> with <a href="DatabaseInterface.html" class="extype" name="DatabaseInterface">DatabaseInterface</a> with <a href="PageRequestWebSocket.html" class="extype" name="PageRequestWebSocket">PageRequestWebSocket</a></span>
+        <a title="" href="PageRequestWSRoutes.html"><span class="name">PageRequestWSRoutes</span></a><span class="result"> extends <span class="extype" name="akka.http.scaladsl.server.Directives">Directives</span> with <a href="DatabaseInterface.html" class="extype" name="DatabaseInterface">DatabaseInterface</a> with <a href="PageRequestWebSocket.html" class="extype" name="PageRequestWebSocket">PageRequestWebSocket</a></span>
       </span>
       
       
@@ -337,9 +289,9 @@
       
       
     </li><li name="_root_.SearchRoutes" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="SearchRoutesextendsDirectiveswithTagsJsonSupportwithDatabaseInterfacewithPageRequestWebSocket"></a><a id="SearchRoutes:SearchRoutes"></a>
+      <a id="SearchRoutesextendsDirectiveswithDatabaseInterfacewithPageRequestWebSocket"></a><a id="SearchRoutes:SearchRoutes"></a>
       <span class="permalink">
-      <a href="index.html#SearchRoutesextendsDirectiveswithTagsJsonSupportwithDatabaseInterfacewithPageRequestWebSocket" title="Permalink">
+      <a href="index.html#SearchRoutesextendsDirectiveswithDatabaseInterfacewithPageRequestWebSocket" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -348,39 +300,7 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="SearchRoutes.html"><span class="name">SearchRoutes</span></a><span class="result"> extends <span class="extype" name="akka.http.scaladsl.server.Directives">Directives</span> with <a href="TagsJsonSupport.html" class="extype" name="TagsJsonSupport">TagsJsonSupport</a> with <a href="DatabaseInterface.html" class="extype" name="DatabaseInterface">DatabaseInterface</a> with <a href="PageRequestWebSocket.html" class="extype" name="PageRequestWebSocket">PageRequestWebSocket</a></span>
-      </span>
-      
-      
-    </li><li name="_root_.TagsBlock" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="TagsBlockextendsProductwithSerializable"></a><a id="TagsBlock:TagsBlock"></a>
-      <span class="permalink">
-      <a href="index.html#TagsBlockextendsProductwithSerializable" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">case class</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="TagsBlock.html"><span class="name">TagsBlock</span></a><span class="params">(<span name="teacher">teacher: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="subject">subject: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
-      </span>
-      
-      
-    </li><li name="_root_.TagsJsonSupport" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="TagsJsonSupportextendsSprayJsonSupportwithDefaultJsonProtocol"></a><a id="TagsJsonSupport:TagsJsonSupport"></a>
-      <span class="permalink">
-      <a href="index.html#TagsJsonSupportextendsSprayJsonSupportwithDefaultJsonProtocol" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="TagsJsonSupport.html"><span class="name">TagsJsonSupport</span></a><span class="result"> extends <span class="extype" name="akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport">SprayJsonSupport</span> with <span class="extype" name="spray.json.DefaultJsonProtocol">DefaultJsonProtocol</span></span>
+        <a title="" href="SearchRoutes.html"><span class="name">SearchRoutes</span></a><span class="result"> extends <span class="extype" name="akka.http.scaladsl.server.Directives">Directives</span> with <a href="DatabaseInterface.html" class="extype" name="DatabaseInterface">DatabaseInterface</a> with <a href="PageRequestWebSocket.html" class="extype" name="PageRequestWebSocket">PageRequestWebSocket</a></span>
       </span>
       
       

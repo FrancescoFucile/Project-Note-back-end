@@ -4,7 +4,7 @@ import spray.json._
 
 import scala.util.{Failure, Success}
 
-trait DatabaseInterface extends DatabaseInterfaceConfig with DBJsonSupport {
+trait DatabaseInterface extends DBJsonSupport {
 
   this: NoteServer =>
 
