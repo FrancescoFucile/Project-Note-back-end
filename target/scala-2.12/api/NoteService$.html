@@ -165,10 +165,10 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="DBJsonSupport.DBMessage" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="DBMessageextendsProductwithSerializable"></a><a id="DBMessage:DBMessage"></a>
+              <ol><li name="DBJsonSupport.DBQueryResponse" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DBQueryResponseextendsProductwithSerializable"></a><a id="DBQueryResponse:DBQueryResponse"></a>
       <span class="permalink">
-      <a href="DBJsonSupport.html#DBMessageextendsProductwithSerializable" title="Permalink">
+      <a href="DBJsonSupport.html#DBQueryResponseextendsProductwithSerializable" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -177,7 +177,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="" href="DBJsonSupport$DBMessage.html"><span class="name">DBMessage</span></a><span class="params">(<span name="messageType">messageType: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="body">body: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="" href="DBJsonSupport$DBQueryResponse.html"><span class="name">DBQueryResponse</span></a><span class="params">(<span name="query_ID">query_ID: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="note_list">note_list: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DBJsonSupport.html" class="extype" name="DBJsonSupport">DBJsonSupport</a></dd></dl></div>
@@ -381,10 +381,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="DBJsonSupport#DBMessageConverter" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="DBMessageConverter:spray.json.RootJsonFormat[DBJsonSupport.this.DBMessage]"></a><a id="DBMessageConverter:RootJsonFormat[DBMessage]"></a>
+    </li><li name="DBJsonSupport#DBQueryResponseJSONConverter" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DBQueryResponseJSONConverter:spray.json.RootJsonFormat[DBJsonSupport.this.DBQueryResponse]"></a><a id="DBQueryResponseJSONConverter:RootJsonFormat[DBQueryResponse]"></a>
       <span class="permalink">
-      <a href="NoteService$.html#DBMessageConverter:spray.json.RootJsonFormat[DBJsonSupport.this.DBMessage]" title="Permalink">
+      <a href="NoteService$.html#DBQueryResponseJSONConverter:spray.json.RootJsonFormat[DBJsonSupport.this.DBQueryResponse]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -393,7 +393,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">DBMessageConverter</span><span class="result">: <span class="extype" name="spray.json.RootJsonFormat">RootJsonFormat</span>[<a href="#DBMessageextendsProductwithSerializable" class="extmbr" name="DBJsonSupport.DBMessage">DBMessage</a>]</span>
+        <span class="name">DBQueryResponseJSONConverter</span><span class="result">: <span class="extype" name="spray.json.RootJsonFormat">RootJsonFormat</span>[<a href="#DBQueryResponseextendsProductwithSerializable" class="extmbr" name="DBJsonSupport.DBQueryResponse">DBQueryResponse</a>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DBJsonSupport.html" class="extype" name="DBJsonSupport">DBJsonSupport</a></dd></dl></div>
@@ -4851,9 +4851,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SchemeDirectives</dd></dl></div>
     </li><li name="DatabaseInterface#searchNotes" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="searchNotes(searchQuery_ID:String):scala.concurrent.Future[String]"></a><a id="searchNotes(String):Future[String]"></a>
+      <a id="searchNotes(searchParameters:String,searchQuery_ID:String):scala.concurrent.Future[String]"></a><a id="searchNotes(String,String):Future[String]"></a>
       <span class="permalink">
-      <a href="NoteService$.html#searchNotes(searchQuery_ID:String):scala.concurrent.Future[String]" title="Permalink">
+      <a href="NoteService$.html#searchNotes(searchParameters:String,searchQuery_ID:String):scala.concurrent.Future[String]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -4862,7 +4862,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">searchNotes</span><span class="params">(<span name="searchQuery_ID">searchQuery_ID: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <span class="name">searchNotes</span><span class="params">(<span name="searchParameters">searchParameters: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="searchQuery_ID">searchQuery_ID: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DatabaseInterface.html" class="extype" name="DatabaseInterface">DatabaseInterface</a></dd></dl></div>
@@ -5282,6 +5282,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>FileUploadDirectives</dd></dl></div>
+    </li><li name="WebpagesRoutes#uriTestRoute" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="uriTestRoute:akka.http.scaladsl.server.Route"></a><a id="uriTestRoute:Route"></a>
+      <span class="permalink">
+      <a href="NoteService$.html#uriTestRoute:akka.http.scaladsl.server.Route" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">uriTestRoute</span><span class="result">: <span class="extype" name="akka.http.scaladsl.server.Route">Route</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WebpagesRoutes.html" class="extype" name="WebpagesRoutes">WebpagesRoutes</a></dd></dl></div>
     </li><li name="akka.http.scaladsl.server.directives.MiscDirectives#validate" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="validate(check:=&gt;Boolean,errorMsg:String):akka.http.scaladsl.server.Directive0"></a><a id="validate(⇒Boolean,String):Directive0"></a>
       <span class="permalink">

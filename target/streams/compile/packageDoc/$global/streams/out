@@ -14,8 +14,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\target\scala-2.12\api\lib\ownderbg2.gif[0m
 [0m[[0m[0mdebug[0m] [0m[0m	DatabaseInterface.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\target\scala-2.12\api\DatabaseInterface.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	DBJsonSupport$DBMessage.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\target\scala-2.12\api\DBJsonSupport$DBMessage.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DBJsonSupport$DBQueryResponse.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\target\scala-2.12\api\DBJsonSupport$DBQueryResponse.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	DatabaseInterface$SearchQuery.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\target\scala-2.12\api\DatabaseInterface$SearchQuery.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	lib\class.svg[0m
@@ -114,6 +114,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\target\scala-2.12\api\AMQPReceiver.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	index.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\target\scala-2.12\api\index.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Utils$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\target\scala-2.12\api\Utils$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	lib\index.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  E:\Projects\Project-Note-back-end\target\scala-2.12\api\lib\index.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	lib\object_diagram.png[0m

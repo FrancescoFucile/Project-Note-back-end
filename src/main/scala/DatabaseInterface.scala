@@ -1,6 +1,8 @@
 import scala.collection.mutable.Set
 import scala.concurrent.{ExecutionContext, Future, Promise}
 import spray.json._
+import DefaultJsonProtocol._
+
 
 import scala.util.{Failure, Success}
 
@@ -18,28 +20,16 @@ trait DatabaseInterface extends DBJsonSupport {
 
   def handler(messageString: String): Unit = {
     println(s"processing message: $messageString")
-    val message = messageString.parseJson.convertTo[DBMessage]
+    val message = messageString.parseJson.convertTo[DBQueryResponse]
     println(s"parsed message: $message")
-    val messageType = message.messageType
-    val messageBody = message.body
-    messageType match {
-      case "note_query" => {
-        println("received note query response from db on amqp:")
-        val queryID_opt = messageBody.get("query_ID")
-        val noteList_opt = messageBody.get("note_list")
-        if (queryID_opt.nonEmpty && noteList_opt.nonEmpty) {
-          val queryID = queryID_opt.get
-          val noteList = noteList_opt.get
-          println(s"query ID: $queryID\nnote list: $noteList")
-          val searchQuery_opt = searchQueries.get(queryID)
+    val queryID = message.query_ID
+    val noteList = message.note_list.toJson.toString
+    println(s"received note query response from db on amqp, query ID: $queryID, note list: $noteList")
+    val searchQuery_opt = searchQueries.get(queryID)
           if (searchQuery_opt.nonEmpty) {
             val searchQuery = searchQuery_opt.get
             searchQuery.completeQuery(noteList)
           }
-        }
-      }
-      case _ => println("error: message not recognized")
-    }
   }
 
   var searchQueries = Map[String, SearchQuery]()
@@ -56,6 +46,9 @@ trait DatabaseInterface extends DBJsonSupport {
   val pageQueryQueueName = "PAGE_QUERY"
   sender.declareQueue(pageQueryQueueName)
 
+  val pageResponseName = "PAGE_RESPONSE"
+  receiver.declareQueue(pageResponseName)
+
   def searchNotes(searchParameters: String, searchQuery_ID: String): Future[String] = {
     println(s"new search query: $searchQuery_ID")
     val searchQuery = new SearchQuery(searchQuery_ID)
@@ -68,11 +61,12 @@ trait DatabaseInterface extends DBJsonSupport {
   receiver.consume(searchQueryResponseName)
 
   /*case class PageRequest(noteID: String, page: Int, clientID: String) {
-    override def toString: String = s"{noteID:$noteID,page:$page, clientID: $clientID}"
+    override def toString: String = s"{noteID:$noteID,page:$page,clientID:$clientID}"
   }*/
-
+  // TODO pageRequests as objects
   def requestPage(pageRequest: String) = {
     sender.sendMessage(pageQueryQueueName, pageRequest)
+
   }
 
 }

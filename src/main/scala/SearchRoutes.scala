@@ -15,10 +15,11 @@ trait SearchRoutes extends Directives with DatabaseInterface with PageRequestWeb
               val searchQuery_ID = 123456789.toString
               val AMQPMessage = s"{subject:$subject teacher:$teacher queryID:$searchQuery_ID}"
               println("sending amqp message to db: "+ AMQPMessage)
-                onComplete(searchNotes(AMQPMessage, searchQuery_ID)) {
+              onComplete(searchNotes(AMQPMessage, searchQuery_ID)) {
                   case Success(noteList) => complete(Utils.makeHttpResponse(noteList))
+                  //case Success(noteList) => complete("this is a response")
                   case Failure(ex) => complete(s"error: $ex")
-                }
+              }
           }
       }
     }

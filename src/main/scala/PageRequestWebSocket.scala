@@ -14,7 +14,7 @@ trait PageRequestWebSocket {
       val text = pageRequest.text
       requestPage(text)
       println(s"received message on ws: $text")
-      TextMessage("request sent to DB")
+      TextMessage(text)
     }
   }
 }

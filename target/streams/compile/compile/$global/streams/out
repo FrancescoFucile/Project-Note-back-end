@@ -1,5 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\Utils.scala:8:3: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
-[0m[[0m[31merror[0m] [0m[0m required: akka.http.scaladsl.model.HttpResponse[0m
-[0m[[0m[31merror[0m] [0m[0m  }[0m
-[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mE:\Projects\Project-Note-back-end\src\main\scala\Utils.scala:8:26: value Access-Control-Allow-Origin is not a member of List[akka.http.scaladsl.model.HttpHeader.type][0m
+[0m[[0m[31merror[0m] [0m[0m    val head_1 = headers.`Access-Control-Allow-Origin`.*[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
