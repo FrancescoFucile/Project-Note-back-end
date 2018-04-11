@@ -12,7 +12,6 @@ trait DatabaseInterface extends DBJsonSupport {
 
   class SearchQuery(uploaderID: String) {
     val noteListJSON = Promise[String]()
-
     def completeQuery(noteListJSON: String) = {
       this.noteListJSON.success(noteListJSON)
     }
@@ -66,7 +65,6 @@ trait DatabaseInterface extends DBJsonSupport {
   // TODO pageRequests as objects
   def requestPage(pageRequest: String) = {
     sender.sendMessage(pageQueryQueueName, pageRequest)
-
   }
 
 }
