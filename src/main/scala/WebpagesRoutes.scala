@@ -1,7 +1,6 @@
 import akka.http.javadsl.model.ContentTypes
 import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.{Directives, PathMatcher, Route}
-import Utils._
 
 
 trait WebpagesRoutes extends Directives {

@@ -1,6 +1,5 @@
 import akka.http.scaladsl.model.headers.RawHeader
 import akka.http.scaladsl.server.{Directives, PathMatcher, Route}
-
 import scala.util._
 
 
@@ -19,7 +18,6 @@ trait SearchRoutes extends Directives with DatabaseInterface with PageRequestWeb
               val AMQPMessage = s"{subject:$subject,teacher:$teacher,queryID:$searchQuery_ID}"
               println("sending amqp message to db: " + AMQPMessage)
               onComplete(searchNotes(AMQPMessage, searchQuery_ID)) {
-                //case Success(noteList) => complete(Utils.makeHttpResponse(noteList))
                 case Success(noteList) => complete(noteList)
                 case Failure(ex) => complete(s"error: $ex")
               }
