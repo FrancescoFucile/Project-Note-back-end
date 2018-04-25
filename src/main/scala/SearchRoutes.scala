@@ -13,9 +13,9 @@ trait SearchRoutes extends Directives with DatabaseInterface with PageRequestWeb
         respondWithHeaders(RawHeader("Access-Control-Allow-Origin","*")) {
           parameters('subject.as[String], 'teacher.as[String]) {
             (subject, teacher) =>
-              //val searchQuery_ID = (Math.random()*100000).toInt.toString
-              val searchQuery_ID = 123456789.toString
-              val AMQPMessage = s"{subject:$subject,teacher:$teacher,queryID:$searchQuery_ID}"
+              val searchQuery_ID = (Math.random()*100000).toInt.toString
+              //val searchQuery_ID = 123456789.toString
+              val AMQPMessage = s"""{"subject":"$subject","teacher":"$teacher","queryID":"$searchQuery_ID"}"""
               println("sending amqp message to db: " + AMQPMessage)
               onComplete(searchNotes(AMQPMessage, searchQuery_ID)) {
                 case Success(noteList) => complete(noteList)

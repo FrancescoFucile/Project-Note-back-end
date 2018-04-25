@@ -49,10 +49,10 @@ trait DatabaseInterface extends DBJsonSupport {
   receiver.declareQueue(pageResponseName)
 
   def searchNotes(searchParameters: String, searchQuery_ID: String): Future[String] = {
-    println(s"new search query: $searchQuery_ID")
     val searchQuery = new SearchQuery(searchQuery_ID)
+    println(s"new search query: $searchParameters")
     searchQueries += ((searchQuery_ID, searchQuery))
-    sender.sendMessage(searchQueryRequestQueueName, searchQuery_ID)
+    sender.sendMessage(searchQueryRequestQueueName, searchParameters)
     val noteListHolder = searchQuery.noteListJSON.future
     noteListHolder
   }
