@@ -27,7 +27,7 @@ trait SearchRoutes extends Directives with DatabaseInterface with PageRequestWeb
     }
 
   def makeSearchJSON(query_ID:String, subject:String,  language:String, teacher_opt:Option[String], university_opt:Option[String], year_opt:Option[String]): String = {
-    var res = s"""{"query_ID":"$query_ID","subject:"$subject","language":"$language""""
+    var res = s"""{"query_ID":"$query_ID","subject":"$subject","language":"$language""""
     if(teacher_opt.nonEmpty) {
       val teacher = teacher_opt.get
       res = res + s""","teacher":"$teacher""""
