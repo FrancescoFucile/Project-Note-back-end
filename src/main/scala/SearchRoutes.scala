@@ -15,9 +15,7 @@ trait SearchRoutes extends Directives with DatabaseInterface with PageRequestWeb
             (subject, teacher, university, year, language) =>
               println(s"received parameters: $subject, $language, $teacher, $university, $year")
               val searchQuery_ID = (Math.random()*100000).toInt.toString
-              //val searchQuery_ID = 123456789.toString
-              //val AMQPMessage = s"""{"subject":"$subject","teacher":"$teacher","queryID":"$searchQuery_ID"}"""
-              val AMQPMessage = makeSearchJSON(subject, teacher, university, year, language)
+              val AMQPMessage = makeSearchJSON(searchQuery_ID, subject, teacher, university, year, language)
               println("sending amqp message to db: " + AMQPMessage)
               onComplete(searchNotes(AMQPMessage, searchQuery_ID)) {
                 case Success(noteList) => complete(noteList)
@@ -28,8 +26,8 @@ trait SearchRoutes extends Directives with DatabaseInterface with PageRequestWeb
       }
     }
 
-  def makeSearchJSON(subject:String,  language:String, teacher_opt:Option[String], university_opt:Option[String], year_opt:Option[String]): String = {
-    var res = s"""{"subject:"$subject","language":"$language""""
+  def makeSearchJSON(query_ID:String, subject:String,  language:String, teacher_opt:Option[String], university_opt:Option[String], year_opt:Option[String]): String = {
+    var res = s"""{"query_ID":"$query_ID","subject:"$subject","language":"$language""""
     if(teacher_opt.nonEmpty) {
       val teacher = teacher_opt.get
       res = res + s""","teacher":"$teacher""""
