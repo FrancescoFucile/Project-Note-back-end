@@ -9,5 +9,5 @@ trait NoteServer extends TestRoutes with SearchRoutes with PageRequestWSRoutes w
   implicit val materializer: ActorMaterializer = ActorMaterializer()
   implicit val executionContext: ExecutionContext = system.dispatcher
 
-  val mainRoute = searchRoutes ~ pageRequestWSRoutes ~ testRoutes ~ homepageRoute ~ uriTestRoute
+  val mainRoute = searchRoutes ~ pageRequestWSRoutes ~ testRoutes ~ homepageRoute ~ uriTestRoute ~ uploadRoute
 }

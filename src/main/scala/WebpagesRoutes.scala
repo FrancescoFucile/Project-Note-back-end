@@ -10,7 +10,16 @@ trait WebpagesRoutes extends Directives {
     get {
       pathSingleSlash {
         pathEnd {
-          getFromResource("testHTML.html")
+          getFromResource("ProjectNote3.html")
+        }
+      }
+    }
+
+  lazy val uploadRoute =
+    get {
+      path("upload") {
+        pathEnd {
+          getFromResource("upload.html")
         }
       }
     }

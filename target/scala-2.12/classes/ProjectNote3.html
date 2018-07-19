@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)http://localhost:63343/WebStorm%20Projects/homepage.html?_ijt=fjnh2ac8u2ilk9tq1mms3vtn3l -->
+<html>
+    <head>
+        <title>ProjectNote</title>
+        <script type="text/javascript">
+
+        //var server_url = "http://localhost:5000/";
+        var server_url =  "https://project-note-main-server.herokuapp.com/"
+        //var server_short_url = "localhost:5000/";
+        var server_short_url = "project-note-main-server.herokuapp.com/"
+        var user_ID = Math.floor(Math.random()*10000).toString();
+        var session_ID = user_ID
+
+        var table = "<tr>\n" +
+            "            <th>Title</th>\n" +
+            "            <th>Teacher</th>\n" +
+            "            <th>University</th>\n" +
+            "            <th>Year</th>\n" +
+            "            <th>Pages</th>\n" +
+            "            <th>cerca</th>\n" +
+            "        </tr>"
+
+        var noteID = "";
+        var currentPageNumber = 1;
+
+        var database_ws = new WebSocket("wss://appunti-db.herokuapp.com/ws");
+        //var database_ws = new WebSocket("ws://127.0.0.1:3400/ws");
+        database_ws.binaryType = 'blob';
+        database_ws.onopen = function() {
+            user_id_json = JSON.stringify({"user_ID":user_ID})
+            database_ws.send(user_id_json);
+        };
+        database_ws.onmessage = handleMessage;
+
+        var server_ws = new WebSocket("ws://"+server_short_url+"view_note");
+        server_ws.onmessage = function (ev) { console.log("Server message: "+ev.data) };
+
+        function loadRequest(uri, callback)
+        {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.timeout = 0;
+            xmlHttp.onreadystatechange = function(e) {
+                if (this.readyState == 4 && this.status == 200) {
+                    callback(this.responseText);
+                }
+            };
+
+            xmlHttp.open("GET", server_url+uri, true);
+            //xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+            xmlHttp.send();
+        }
+
+        function displayFoundNotes(text){
+            var display = document.getElementById("display");
+            console.log(text);
+            var list = JSON.parse(text);
+            var output = table;
+            for(var i = 0; i < list.length; i++){
+                var element = list[i];
+                output += transformListElement(element);
+            }
+            console.log(output);
+            display.innerHTML = output;
+        }
+
+        function transformListElement(element){
+            var name = element["title"];
+            var address = element["ID"];
+            var pages = element["pages"];
+            var teacher = element["teacher"]
+            var university = element["university"];
+            var year = element["year"];
+            currentPageNumber = 0;
+            console.log(element);
+            return `<tr><td>${name}</td><td>${teacher}</td><td>${university}</td><td>${year}</td><td>${pages}</td><td><input type="button" name="${name}" value="open" onclick="openNote('${address}');"></input></td></tr>`;
+        }
+
+        function test(txt){
+            console.log(txt);
+        }
+
+        function DoSearch() {
+            loadRequest("uritest", viewtest);
+        }
+
+        function openNote(requestNoteID){
+            currentPageNumber = 1;
+            noteID = requestNoteID;
+            sendPageRequest(session_ID,noteID,currentPageNumber);
+        }
+
+        function nextPage() {
+            currentPageNumber++;
+            sendPageRequest(session_ID,noteID,currentPageNumber);
+        }
+
+        function prevPage() {
+            currentPageNumber--;
+            sendPageRequest(session_ID,noteID,currentPageNumber);
+        }
+
+        function sendPageRequest(userID, noteID, pageNumber) {
+            var pageRequest = {
+                userID:userID,
+                noteID:noteID,
+                pageNumber:pageNumber
+            }
+            var pageRequestString = JSON.stringify(pageRequest);
+            server_ws.send(pageRequestString);
+        }
+
+        function handleMessage(message){
+            //log("Response from DB: " + message.data);
+            log("Response from DB" + message.data);
+            var urlCreator = window.URL || window.webkitURL;
+
+            var binaryData = [];
+            binaryData.push(message.data);
+
+            var imageUrl = urlCreator.createObjectURL(new Blob(binaryData, {type: "application/zip"}));
+            document.querySelector("#image").src = imageUrl;
+            //displayPageText(message);
+        }
+
+        function displayPageText(JSONString) {
+            //var contents = JSON.parse(JSONString);
+            //var text = contents["data"];
+            //var text = JSON.parse(JSON.stringify(JSONString.data));
+            //text = text.data;
+            var text = JSONString.data
+            document.getElementById("span").innerText = text;
+        }
+
+        function searchNotes(){
+            var subject = document.searchForm.subject.value;
+            var language = document.searchForm.language.value;
+            var teacher = document.searchForm.teacher.value;
+            var univeristy = document.searchForm.university.value;
+            var year = document.searchForm.year.value;
+
+            var searchString = `search?subject=${subject}&language=${language}`;
+            if(teacher != "")
+                searchString.concat(`&teacher=${teacher}`)
+            if(univeristy != "")
+                searchString.concat(`&university=${univeristy}`)
+            if(year != "")
+                searchString.concat(`&year=${year}`)
+            log(server_url+searchString);
+            loadRequest(searchString, displayFoundNotes);
+        }
+
+        function log(txt) {
+            console.log(txt);
+        }
+
+        </script>
+</head>
+<body>
+<div align="center">
+    <h1>Search a note</h1><br>
+    <form name="searchForm" onsubmit="searchNotes()">
+    <input name="subject" type="text" size="50" placeholder="Subject" value="fisica" required/><br>
+    <input name="language" type="text" size="50" placeholder="Language" value="ITA" required/><br>
+    <input name="teacher" type="text" size="50" placeholder="Teacher"/><br>
+    <input name="university" type="text" size="50" placeholder="University"/><br>
+    <input name="year" type="text" size="50" placeholder="Year"/><br>
+    <input name="search" type="button" onclick="searchNotes()" value="SEARCH">
+    </form>
+    <table id="display"/>
+    <br>
+    <input name="next_page" type="button" value="Next page" onclick="nextPage()"/>
+    <input name="prev_page" type="button" value="Prev page" onclick="prevPage()"/>
+    <br>
+    <img id="image"/><br>
+    <form action="/use_token" method="post" id=INT>
+        <input type="hidden" id="a_t" name="oauthT">
+        <input type="hidden" id="f_id" name="fileID">
+        <input type="hidden" id="name" name="fileN">
+    </form>
+    <a href="http://localhost:5000/upload">Share</a>
+</div>
+</body></html>
