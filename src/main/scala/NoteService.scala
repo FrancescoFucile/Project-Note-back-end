@@ -12,7 +12,5 @@ object NoteService extends App with NoteServer {
 
   println(s"server started on $port")
 
-  println("yellow")
-
   val serverBindingFuture: Future[ServerBinding] = Http().bindAndHandle(mainRoute, "0.0.0.0", port)
 }
