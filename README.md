@@ -8,7 +8,7 @@ Users can read and change pages directly from the browser as pages are stramed f
 
 The system is composed by 4 modules:
 -   front-end code to manage session data and visualization
--   back-end server used during note serach/visualization
+-   back-end server used for note serach/browsing and webpages delivery
 -   back-end server used during the upload
 -   database used to store files and metadata
 
