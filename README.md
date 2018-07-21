@@ -6,9 +6,10 @@ Utents are able to upload notes as images from their PCs or from the cloud with 
 Notes are classified by their uploaders with a system of tags, which can then be used to search shared them.
 Users can read and change pages directly from the browser as pages are stramed from the database via websocket.
 
-The system is composed by 3 modules:
+The system is composed by 4 modules:
 -   front-end code to manage session data and visualization
--   back-end server used to connect the users with the database and serve the pages
+-   back-end server used during note serach/visualization
+-   back-end server used during the upload
 -   database used to store files and metadata
 
 The server is written in Scala on top of the Akka actors/stream/http framework, which is used to provide a strong support for asynchronous communication.
@@ -30,6 +31,7 @@ Uploads are manageb by another microservice (server) using Google APIs for the O
 Uploads make use of tags to allow users to find and sort notes.
 
 Database repo: https://gist.github.com/biosan/bdc89141b9acf9bb09bf43b34606ad0f
+
 Upload service repo:
 
 Authors: 
