@@ -32,7 +32,8 @@ Uploads make use of tags to allow users to find and sort notes.
 Database repo: https://gist.github.com/biosan/bdc89141b9acf9bb09bf43b34606ad0f
 Upload service repo:
 
-Authors:
-Francesco Fucile
-Lucia Esposito
+Authors: 
+
+Francesco Fucile, 
+Lucia Esposito, 
 Alessandro Biondi
